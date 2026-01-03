@@ -30,9 +30,9 @@ The project demonstrates **backend system design**, **secure authentication**, *
 * Cloud Database
 * Linux Server
 
- Features
+### Features
 
-###  Authentication & Authorization
+**Authentication & Authorization**
 
 * User registration and login
 * JWT token generation and validation
@@ -40,30 +40,30 @@ The project demonstrates **backend system design**, **secure authentication**, *
 * Custom Spring Security configuration
 * Stateless authentication
 
-###  URL Management
+**URL Management**
 
 * URL shortening logic
 * Secure redirect functionality
 * Public and private URLs
 * Path-based routing
 
-### Analytics & Dashboard
+**Analytics & Dashboard**
 
 * Click tracking per URL
 * User-level analytics
 * URL-specific performance insights
 * Dashboard data APIs
 
-###  Deployment
+**Deployment**
 
 * Dockerized backend application
 * Cloud-hosted database
 * Domain routing and server deployment
 * End-to-end tested system
 
-System Architecture & Workflow
+### System Architecture & Workflow
 
-### End-to-End Request Flow
+**End-to-End Request Flow**
 
 ```
 User
@@ -132,7 +132,7 @@ mvn spring-boot:run
 
 ---
 
-## 🔒 Security Implementation Details
+## Security Implementation Details
 
 * JWT-based stateless authentication
 * Custom authentication filter
@@ -141,7 +141,7 @@ mvn spring-boot:run
 * Spring Security best practices
 ---
 
-## 🚧 Future Enhancements
+##  Future Enhancements
 
 * Redis caching for faster redirects
 * Rate limiting to prevent abuse
