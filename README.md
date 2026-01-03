@@ -1,4 +1,4 @@
-🔗 URL Shortener Platform | Spring Boot, JWT, REST APIs, Docker
+URL Shortener Platform | Spring Boot, JWT, REST APIs, Docker
 
 A **production-ready full-stack URL Shortener application** built using **Java, Spring Boot, Spring Security, JWT authentication, RESTful APIs, MySQL, Docker, and cloud deployment**.
 
