@@ -13,17 +13,23 @@ import java.util.Collections;
 @Data
 @NoArgsConstructor
 public class UserDetailsImpl implements UserDetails {
+
     private static final long serialVersionUID = 1L;
 
     private Long id;
     private String username;
     private String email;
-
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(
+            Long id,
+            String username,
+            String email,
+            String password,
+            Collection<? extends GrantedAuthority> authorities
+    ) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -31,8 +37,11 @@ public class UserDetailsImpl implements UserDetails {
         this.authorities = authorities;
     }
 
+    // ✅ REQUIRED by UserDetailsServiceImpl
     public static UserDetailsImpl build(User user) {
-        GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
+        GrantedAuthority authority =
+                new SimpleGrantedAuthority(user.getRole());
+
         return new UserDetailsImpl(
                 user.getId(),
                 user.getUsername(),
@@ -41,6 +50,8 @@ public class UserDetailsImpl implements UserDetails {
                 Collections.singletonList(authority)
         );
     }
+
+    // ===================== UserDetails METHODS =====================
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -55,5 +66,25 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public String getUsername() {
         return username;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;   // account valid
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;   // not locked
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;   // credentials valid
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;   // user enabled
     }
 }

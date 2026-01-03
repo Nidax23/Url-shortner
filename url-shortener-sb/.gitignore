@@ -31,3 +31,20 @@ build/
 
 ### VS Code ###
 .vscode/
+# Node
+node_modules/
+dist/
+
+# Java
+target/
+*.class
+
+# Env
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
